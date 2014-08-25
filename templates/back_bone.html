@@ -1,0 +1,930 @@
+ {% raw """
+<script id="template-help-view" type="text/template">div.help-content
+   h1 Cantas Help Document
+   article
+     section.row-fluid
+       div.span6
+         h2 Create your own board.
+         p By clicking "New Board" button, you can create your own board. In this page, you can view all public/your own/closed boards.
+       div.span6.help-img
+     section.row-fluid
+       div.span6.help-img
+       div.span6
+         h2 Create a new list.
+         p  By clicking "New List" button, you can create a new list, in which you can add cards.
+     section.row-fluid
+       div.span6
+         h2 Add a new card.
+         p By clicking "Add a card" button, you can add cards in any list. (You have had the permission to edit this board.)
+       div.span6.help-img
+     section.row-fluid
+       div.span6.help-img
+       div.span6
+         h2 Set the board to a private board.
+         p  By clicking this icon, you can set the board to a private board.
+     section.row-fluid
+       div.span6
+         h2 Invite others to board.
+         p You can invite other people into the board. Thus they have permissions  to edit this board.
+       div.span6.help-img
+     section.row-fluid
+       div.span6.help-img
+       div.span6
+         h2 View activities of this board.
+         p You can view all activities of this board.
+     section.row-fluid
+       div.span6
+         h2 Archive a list.
+         p You can archive this list.
+       div.span6.help-img
+     section.row-fluid
+       div.span6.help-img
+       div.span6
+         h2 Archive a card.
+         p You can archive this card.
+     section.row-fluid
+       div.span6
+         h2 Assign tasks to board members.
+         p You can assign tasks to board members.
+       div.span6.help-img
+     section.row-fluid
+       div.span6.help-img
+       div.span6
+         h2 View your notifications.
+         p You can view your notifications such as tasks assigned to you, invitations to join boards and so on.
+     section.row-fluid
+       div.span6
+         h2 Add checklists for a card.
+         p You can add checklists for a card. 
+       div.span6.help-img
+     section.row-fluid
+       div.span6.help-img
+       div.span6
+         h2 Add comments for a card.
+         p You can add comments for a card.
+     section.row-fluid
+       div.span6
+         h2 Move a list to other places.
+         p You can move a list to other places. 
+       div.span6.help-img
+     section.row-fluid
+       div.span6.help-img
+       div.span6
+         h2 Move a card to other places.
+         p You can move a card to other places. 
+     section.row-fluid
+       div.span6
+         h2 Import a JSON file from Trello.
+         p You can import boards by giving a JSON file of Trello.
+       div.span6.help-img
+     section.row-fluid
+       div.span6.help-img
+       div.span6
+         h2 Import bugs from Bugzilla.
+         p You can import bugs by giving an URL of bug list in bugzilla.
+     section.row-fluid
+       div.span8
+         h2
+           p#browserSupportMatrix Browser Support Matrix
+         table#js-browser-support-matrix.eso-table
+           thead
+             tr
+               th
+               th(colspan="2") Chrome
+               th(colspan="5") Firefox
+               th(colspan="2") Safari
+             tr
+               th
+               th(colspan="2") TBD
+               th 3.6
+               th 4
+               th 10
+               th 17
+               th 24
+               th(colspan="2") TBD
+           tbody
+             tr
+               td WebSockets
+               td
+               td
+               td ×
+               td √
+               td √
+               td √
+               td √
+               td
+               td
+             tr
+               td HTML5
+               td
+               td
+               td √-
+               td √-
+               td √
+               td √
+               td √
+               td
+               td
+             tr
+               td CSS3
+               td
+               td
+               td √-
+               td √
+               td √
+               td √
+               td √
+               td
+               td
+             tr
+               td ECMAScript 5
+               td
+               td
+               td √-
+               td √
+               td √
+               td √
+               td √
+               td
+               td
+         p Note: x(nonsupport), √-(partial support), √(widespread support). Chrome and Safari versions are to be determined.</script><script id="template-account-settings-view" type="text/template">div.board-ul-title
+ h3= header
+div.settings-container
+ form(role="form")
+   div.form-group
+     label.control-label Username
+       input#userName(type="text", value=username)
+     label.control-label Password
+       input#userPassword(type="password", placeholder="Password")</script><script id="template-welcome-view" type="text/template">div.container.demo-1
+ div.codrops-top.clearfix
+   a.skip(href="/")
+     strong SKIP
+ div#slider.sl-slider-wrapper
+   div.sl-slider    
+     div.sl-slide.bg-1(data-orientation='horizontal', data-slice1-rotation='-25', data-slice2-rotation='-25', data-slice1-scale='2', data-slice2-scale='2')
+       div.sl-slide-inner
+         div.deco
+           div.load-outer
+             div.loader
+               div.top
+                   div.load-bar
+                   div.load-bar
+                   div.load-bar
+                   div.load-bar
+                   div.load-bar
+               div.bottom
+                   div.load-bar
+                   div.load-bar
+                   div.load-bar
+                   div.load-bar
+                   div.load-bar
+         h2 Welcome to Cantas!
+         blockquote
+           <p>Finding a flexible tool to manage your work?
+           <br>Your current tool is so complicated?<br>
+           <br>You&lsquo;ve come to the right place!
+           <br>Let us show you a <strong>simple and easy tool</strong> to manage your work!</p>
+     div.sl-slide.bg-2(data-orientation='vertical', data-slice1-rotation='10', data-slice2-rotation='-15', data-slice1-scale="1.5", data-slice2-scale='1.5')
+       div.sl-slide-inner
+         div.deco
+         h2 Create a Board
+         blockquote
+           <p>After login, you can click the yellow shining button 
+           <br><strong>'New Board' </strong>
+           <br>to create your own board and manage your work in it. </p>
+     div.sl-slide.bg-3(data-orientation='horizontal', data-slice1-rotation='3', data-slice2-rotation='3', data-slice1-scale='2', data-slice2-scale='1')
+       div.sl-slide-inner
+         div.deco
+         h2 Create A List
+         blockquote
+           <p>In the board, there has been 3 lists named 'To Do', 'Doing', 'Done'. 
+           <br>You want more lists? 
+           <br> Just click the yellow shining button <strong>'New List'</strong> on the top.</p> 
+     div.sl-slide.bg-4(data-orientation='vertical', data-slice1-rotation='-5', data-slice2-rotation='25', data-slice1-scale='2', data-slice2-scale='1')
+       div.sl-slide-inner
+         div.deco
+         h2 Add a Card
+         blockquote
+           <p>What can you do for the existed list? 
+           <br>Just click the button <strong>'Add a Card'</strong>.
+           <br>Input your tasks or things you want to record.</p>
+     div.sl-slide.bg-5(data-orientation='horizontal', data-slice1-rotation='-5', data-slice2-rotation='10', data-slice1-scale='2', data-slice2-scale='1')
+       div.sl-slide-inner
+         div.deco
+         h2 Find more in card detail 
+         blockquote
+           <p>Have added a card?
+           <br>Click every card, you can manage more informations.
+           <br>Such as 
+           <br><strong>Add checklists</strong>
+           <br><strong>Leave comments</strong>
+           <br><strong>and so on.</strong>
+   nav#nav-arrows.nav-arrows
+     span.nav-arrow-prev Previous
+     span.nav-arrow-next Next
+   nav#nav-dots.nav-dots
+     span.nav-dot-current
+     span
+     span
+     span
+     span</script><script id="template-dashboard-layout-view" type="text/template">div.row-fluid.dashboard-layout
+ div.span2.dashboard-navigation
+ div.span10.dashboard-content</script><script id="template-dashboard-navigation-view" type="text/template">ul
+ li
+ li
+   span
+   a.nav-boards-public(href="/boards/public") Public Boards
+ li
+   span
+   a.nav-boards-mine(href="/boards/mine") My Boards
+ li
+   span
+   a.nav-boards-closed(href="/boards/closed") Closed Board
+ li
+   span
+   a.nav-cards-mine(href="/cards/mine") My Cards
+ li
+   span
+   a.nav-account-settings(href="/account") Account Settings
+ li</script><script id="template-search-view" type="text/template">div.search-results-container
+ h4.boards-title Boards 
+ .board-archive
+ h4.cards-title Cards 
+ .card-archive</script><script id="template-search-board-list-view" type="text/template">ul.board-ul
+ each board in boards
+   if board.isClosed === true
+     li.board-close
+       a(href="/boards/closed?highlighted=" + board._id, class="board-name js-view-board")= board.title
+   else
+     li
+       a(href="/board/" + board._id, class="board-name js-view-board")= board.title</script><script id="template-quick-search-view" type="text/template">div.board-ul-title.clearfix
+ h3.pull-left Search Results
+div.results-container
+ .row-fluid
+   .span4
+     h4.boards-title Boards 
+       span.count 
+     .board-archive
+   .span8
+     h4.cards-title Cards 
+       span.count 
+     .card-archive
+ a.btn.btn-warning.js-full-results View all results 
+   i.icon-arrow-right
+div.no-results
+ span.message Please enter a search query</script>
+ <script id="template-board-list-view" type="text/template">div.board-ul-title
+ h3= h3Header
+ a.btn.btn-warning.new-board(type="text", onclick="cantas.navigateTo('boards/new')") New Board
+div.board-ul-wapper
+ div.clearfix.board-ul-header
+   span.owner.board-name Board Name
+   span Creation Time
+   span Owner
+ul.board-ul
+ each board in boards
+   if board.isClosed == true
+     li(class=(highlighted === board._id) ? 'board-close highlighted' : 'board-close')
+       div.owner.board-name= board.title
+       div.board-meta
+         span= cantas.utils.formatDate(board.created)
+         span= board.creatorId.username
+       if isCreator(board)
+         a.js-open-board.reopen.board-list-status(data-board= board._id, title="Open this board")
+   else
+     li(class=(highlighted === board._id) ? 'highlighted' : '')
+       a.owner.board-name.js-view-board(href="/board/#{board._id}")= board.title
+       div.board-meta
+         span= cantas.utils.formatDate(board.created)
+         span= board.creatorId.username
+       if isCreator(board)
+         a.js-close-board.delete.board-list-status(data-board= board._id, title="Close this board")</script>
+ <script id="template-card-list-view" type="text/template">div.board-ul-title
+ h3= h3Header
+div.card-scroll-view
+ div.card-archive</script><script id="template-card-list-view-no-results" type="text/template">p.alert.alert-info
+ i.icon-info-sign
+ span= message</script><script id="template-card-list-load-more" type="text/template">div.load-more
+ button(type="button").btn.btn-warning.btn-load-more.js-load-more
+   i.icon-spin.icon-spinner
+   i.icon-chevron-down
+   span Load More</script><script id="template-board-view" type="text/template">header#board-header
+ div.js-edit-board-title.board-title(title=title)= title
+ a.board-info(title="Board Description")
+   div#board-description.modal.window-detail.hide
+     header.modal-header
+       button#close-board-edit.close × 
+       h3 Description
+     div.modal-body
+       textarea#board-description-text.board-info-panel.text-shadow-inset(placeholder="Add Board Description")
+     footer.modal-footer
+       button#cancel-board-edit.btn Cancel
+       button#save-board-edit.btn.btn-primary Save
+   a.private.setting.js-select-private(title="Set to private")
+   a.board-setting.setting.js-toggle-board-menu(title="Board Options")
+   a.js-show-configuration.setting.board-config(title="Admin Configuration")
+   div.board-menu.menu.modal
+     header.modal-header
+       h4 Board Options
+     div.modal-body
+       ul
+         li.js-add-list: a Add a List
+         li.js-archived-items: a Archived Items
+         li.js-import-bugzilla: a Import From Bugzilla
+         li.js-import-trello: a Import From Trello
+         if creatorId._id == cantas.user.id
+           if isClosed
+             li.js-open-board: a Open this board
+           else
+             li.js-close-board: a Close this board
+       input#import-trello(type="file", name="trelloJSON")
+   button.btn.btn-warning.new-list.js-add-list New List
+   a#toggleActivities.setting.activity-link(title="Activity")
+div#app.board-content.clearfix
+ div#list-title-edit-placeholder.hide
+   div#edit-title.edit-title
+     input(id="title-input", placeholder="")
+     button.btn#title-save.js-save-list-title Save
+ div#board.ui-sortable.board
+div.board-side-scroll.js-board-side-scroll-left
+ a ‹
+div.board-side-scroll.board-side-scroll-right.js-board-side-scroll-right
+ a ›
+div.side-bar.member-bar
+ a.new-item.js-toggleInvite Invite
+ div#sb_memberlist.scroll-pane
+   div.scroll-content-item
+div.invite.side-bar
+ div.side-bar.collapse-bar <span>›</span>
+ header <h4>Invitation</h4> <a>×</a>
+ div.invite-new
+   div.invite-display
+     ul.toBeInvitedUsers
+       li
+          input.input-member(type="text", size="2", maxlength="21")
+   span 'Comma', 'Space' or 'Enter' is needed to activate and add more.
+   button#btn-invite.btn(disabled="disabled") Invite
+ header <h4>Member</h4> 
+ div.invite-member
+   div.invite-display
+     ul
+div.activity.side-bar
+ div.side-bar.collapse-bar <span>›</span>
+ header <h4>Activity</h4> <a>×</a>
+ script(type="text/template", id="activity-item-template", class="hide")
+   <%= cantas.utils.safeString(content) %><p><%= cantas.utils.formatDate(createdOn) %></p>
+ ul // Empty Activities container
+div#list-new.modal.list-new.hide
+ header.modal-header
+   button.close(data-dismiss="modal") ×
+   h3 Add a List
+ div.modal-body
+   input#list-title.text-shadow-inset(placeholder="Untitled List")
+ footer.modal-footer
+   button.js-create-new-list.btn.btn-primary Add
+   button.btn(data-dismiss="modal") Cancel
+div#import-trello-dialog.modal.hide(data-backdrop='static')
+ header.modal-header
+   h3 Import Trello's JSON File
+ div.modal-body
+   div#import-trello-processing
+     div.process-loading
+       div.loader
+         div.top
+           div.bar
+           div.bar
+           div.bar
+           div.bar
+           div.bar
+         div.bottom
+           div.bar
+           div.bar
+           div.bar
+           div.bar
+           div.bar
+   p#import-trello-message
+ footer.modal-footer
+   button#import-trello-complete.btn.btn-primary(disabled='disabled') Processing...</script><script id="template-board-title-view" type="text/template">div#board-edit-title.edit-title
+ input#board-title-input(type="text")
+ button#board-title-save.btn(href="javascript:void(0)") Save</script><script id="template-label-assign-view" type="text/template">header.modal-header
+ button#close-board-edit.close.js-close-label-window ×
+ h3 Label
+div.modal-body
+ ul.label-items
+   each relation in relations
+     if relation.selected
+       li.checked(id=relation._id, style='background-color:' + relation.labelId.color)
+         span
+     else
+       li(id=relation._id, style='background-color:' + relation.labelId.color)
+         span</script><script id="template-list-view" type="text/template">header.list-header.handle
+ div.list-header-title
+   h4.js-list-title
+     strong.js-list-title-text(title= title)= title
+     span.js-card-quantity(title="Total")
+ a.list-setting.setting.js-list-setting
+section.list-content.droptrue.move.ui-state-default.connectedSortable.js-list-content
+footer.add-plugin.js-add-card Add a card</script><div id="list-menu" style="display:none" class="modal list-menu menu"><header class="modal-header"><h4>List Options</h4></header><div class="modal-body"><ul><li class="js-add-card"><a>Add Card</a></li><li class="js-archive-list"><a>Archive This List</a></li><li class="js-archive-all-cards"><a>Archive All Cards in This List</a></li><li class="js-move-list"><a>Move List</a></li></ul></div></div><script id="template-card-view" type="text/template">div.card-container.ui-state-default.card-title
+ div.card.clearfix
+   a.setting.card-setting
+   p= title
+   if typeof cover === 'string'
+     if cover
+       if coverURL.indexOf('thumb-card') > -1
+         div.card-cover(style='background-image:#{coverURL};')
+       else
+         div.card-cover.original-size(style='background-image:#{coverURL};')
+     else
+       div.card-cover.hide
+   section.card-items
+     each assignee in assignees
+       span.card-assignee(title="Assignee: "+assignee.username + "")= assignee.username
+     if typeof badges === "object"
+       if badges.comments !== 0
+         span.card-comment(title="#{badges.comments} comment(s).")= badges.comments
+       if badges.checkitems !== 0
+         span.card-checklist(title=" #{checkitemsProgress} checklist items completed.")= checkitemsProgress
+       if (badges.votesYes + badges.votesNo) !== 0
+         span.card-vote(title=" #{badges.votesYes} agree,  #{badges.votesNo} disagree.")= badgesVotes
+       if badges.attachments !== 0
+         span.card-attachment(title=" #{badges.attachments} attachment(s).")= badges.attachments
+     if dueDateDisplay
+       span.card-due-date= "Due " + dueDateDisplay
+   if typeof index !== "undefined"
+     div.card-index(title="Card Position")
+     span.order-number= index
+   div.card-filter.clearfix</script><script id="template-card-meta-view" type="text/template">div.card-meta!= meta</script><div id="card-menu" style="display:none" class="modal card-menu menu hide"><header class="modal-header"><h4>Card Options</h4></header><div class="modal-body"><ul><li class="js-archive-card"><a>Archive this card</a></li><li class="js-move-card"><a>Move Card</a></li></ul></div></div><script id="template-card-add-view" type="text/template">div.hidden-option.ui-state-disabled.js-add-card-area
+ form.form-horizontal.option-form
+   div.control-group
+     div.controls
+       textarea#card-form.input-xlarge.xx(placeholder="Untitled Card")
+ footer.add-card-button.clearfix
+   button.btn.btn-primary.finish-add-checklist.js-btn-submit Add
+   button.btn.option-cancel.js-cancel Cancel</script><script id="template-card-detail-view" type="text/template">div(id= card._id, class="modal card-detail")
+ div.modal-header
+   button.close(data-dismiss="modal")×
+   h3.card-detail-title.card-title.js-edit-title.js-title(title="Click to edit...")= card.title
+   div.card-option-edit.hidden.js-edit-title-area
+     textarea.js-title-input
+     button.btn.btn-primary.js-save-title Save
+     button.btn.js-cancel-title Cancel
+   section
+     a.assigned.js-edit-assign.js-assignees= card.assignees
+     a.card-label.js-edit-label
+       span Label
+       div.card-filter.clearfix
+     a.card-vote.js-edit-vote
+     a.js-subscribe
+     a.card-due-date.js-edit-due-date
+       if card.dueDateDisplay
+         span= card.dueDateDisplay
+       else 
+         span Due Date
+     div.modal.window-label.window-detail.hide
+     div.modal.window-assign.window-detail.hide
+     div.modal.window-vote.window-detail.hide
+     div.modal.window-due-date.window-detail.hide
+     div.modal.window-attachment.window-detail.hide
+ div.modal-body
+   div.card-option-panel
+     section
+       a.js-edit-assign
+         span Assign
+     section(style="display: none;")
+       a.js-add-duedate
+         span Due Date
+     section(title="Add a checklist")
+       a.js-add-checklist
+         span Checklist
+     section
+       a.js-add-attachment
+         span Attachment
+     section
+       a.js-add-comment
+         span Comment
+   section.card-option.card-description
+     h4.desc.card-detail-desc.js-edit-desc.js-desc(title="Click to edit...")!= card.description
+       a.new-item(href="http://daringfireball.net/projects/markdown/syntax") Markdown Syntax
+     a: span.new-item.js-edit-desc Edit Card Description
+     div.card-option-edit.js-edit-desc-area
+       textarea.js-desc-input(placeholder="Add description")
+       button.btn.btn-primary.js-save-desc Save
+       button.btn.js-cancel-desc Cancel
+   section.card-option.js-checklist-section
+   section.card-option.attachment
+   section.card-option.comment
+ div.modal-footer
+   a.btn.js-close-card-detail(data-dismiss="modal", href="javascript: void(0)") Close</script><script id="template-card-assign-view" type="text/template">header.modal-header
+ button#close-board-edit.close.js-close-assign-window ×
+ h3 Assign
+div.modal-body
+ ul.assignee
+   each member in members
+     if member.checked
+       li.js-select-assignee.checked(data-uid= member.userId._id)= member.userId.username
+         span 
+     else
+       li.js-select-assignee(data-uid= member.userId._id)= member.userId.username
+         span 
+footer.modal-footer
+ button#save-board-edit.btn.btn-primary.js-save-assignee Save
+ button#cancel-board-edit.btn.js-cancel-assign-window Cancel</script><script id="template-card-checklist" type="text/template">a.delete
+div.checklist-title
+ h4= cantas.utils.safeString(title)
+   a.js-fold-items.extend
+ a.delete.delete-checklist.js-checklist-delete
+ div.progress
+   div.bar.bar-success.bar-self(style="width: 0%;")
+     a 0%
+ ul.js-items
+ ul.js-item-entryview
+   li.js-add-item
+     a.new-item Add item</script><script id="template-card-checkitem" type="text/template">p.js-check-item-text(title="Edit Content")= cantas.utils.safeString(content)
+div.checkbox.js-item-checkbox
+ span
+a.delete.delete-item.js-item-delete</script><script id="template-card-labels-neonlights" type="text/template">each relation in relations
+ if relation.selected
+   div(title=relation.labelId.title, style="background-color: " + relation.labelId.color).clabel</script><script id="template-card-vote-view" type="text/template">header.modal-header
+ button#close-board-edit.close.js-close-vote-window ×
+ h3 Vote
+div.modal-body
+ if voteControl === 'opened'
+   a#card-agree.js-vote-agree.burst-12.agree.vote 
+     span 
+     span 
+     span 
+   a#card-disagree.js-vote-disagree.burst-12.disagree.vote 
+     span 
+     span 
+     span 
+ else if voteControl === 'disabled'
+   span This vote is only for members.
+ else if voteControl === 'closed'
+   span This vote is closed.</script><script id="template-card-votes-total-view" type="text/template">span.vote-agree-num= voteYes 
+span.agree
+span.vote-disagree-num= voteNo 
+span.disagree</script><script id="template-attachment-view" type="text/template">h4 Attachment
+table.fileupload-table.table-striped.attachment-download-table.js-attachment-download-table(role='presentation')
+  tbody
+if isBoardMember
+  span.btn.btn-success.fileinput-button
+    span Select&nbsp;&nbsp;files...
+    input#attachmentUpload(type="file", multiple="", name="attachment")
+  table.fileupload-table.table-striped.attachment-upload-table.js-attachment-upload-table(role='presentation')
+    tbody</script><script id="template-attachment-upload-view" type="text/template">td.upload-preview
+td.upload-name= name
+td.upload-size= fileSize
+  div.progress.progress-success.progress-striped.active.js-upload-progress(role='progressbar', aria-valuemin="0", aria-valuemax='100', aria-valuenow='0')
+    div.bar(style='width:0%')
+td.upload-control
+  button.btn.btn-primary.start.js-upload-start(disabled='disabled') Processing...
+  button.btn.btn-danger.upload-delete.js-upload-delete Delete</script><script id="template-attachment-download-view" type="text/template">td.download-cover
+  if fileType === 'picture'
+    div.checkbox.js-download-cover
+      span
+td.download-preview
+  if thumbnail
+    img(src= thumbnail)
+if isBoardMember
+  td.download-name
+    a(href=url, target='_blank')= fileName
+else
+  td.download-name= fileName
+td.download-size= size
+td.download-uploader= uploaderId.username
+td.download-createdOn= createdOn
+td.download-control
+  if isBoardAdmin || (isBoardMember && isUploader)
+    button.btn.btn-danger.download-delete.js-download-delete Delete</script><script id="template-card-due-date-view" type="text/template">header.modal-header
+ button#close-board-edit.close.js-close ×
+ h3 Due Date
+div.modal-body
+ form(id="form-due-date")
+   div.due-date-inputs
+     div.field-date
+       label Date
+       input(type="text", value=dueDate, class="input-due-date js-due-date", name="due-date")
+     div.field-time
+       label Time
+       input(type="text", value=dueTime, class="input-due-time js-due-time", name="due-time")
+   div.js-datepicker
+   div.js-timepicker
+footer.modal-footer
+ button.btn.btn-primary.js-save Save
+ button.btn.btn-danger.js-delete Remove
+ button.btn.js-close Cancel</script><script id="template-archived-view" type="text/template">div
+ div.modal-header.clearfix
+   button(type="button",class="close",data-dismiss="modal",aria-hidden="true")×
+   h2.window-title-text    Archived&nbsp;
+     span.js-current-section #{section}
+ ul.nav.nav-tabs
+   li.lists-tab
+     a.js-switch-section List
+   li.cards-tab
+     a.js-switch-section Card
+ div.modal-body
+   p.loading Loading....
+   div.window_module
+     ul.archive-list.js-archive-items</script><script id="template-archived-items-view" type="text/template">- if (section == 'lists')
+ div.ar-list
+   p.item-name= item.title
+   a(href="#",class="js-reopen sent",data-listid="#{item._id}",title="Send to board")
+- else if (section == 'cards')
+ div(class=(highlighted === item._id) ? 'card highlighted' : 'card')
+   p= item.title
+   a(href="#",class="js-cards-reopen sent",data-cardid="#{item._id}",title="Send to board")</script><script id="template-import-bugzilla-view" type="text/template">div 
+  div.modal-header
+    button(type="button",class="close",data-dismiss="modal",aria-hidden="true")×
+    h2.window-title-text    Import Bugs From Bugzilla
+        div.mapping-config
+          div.row-fluid
+            div.span2
+              button.btn.btn-primary.js-add-mapping Add Mapping
+            div.span2
+              button.btn.btn-primary.js-sync-all Sync All
+          div.modal-body.mapping-body
+    div.window_module
+        div.mapping-list.hide.mapping-add
+  footer.modal-footer
+    button.btn(data-dismiss="modal") Close</script><script id="template-syncconfig-item-view" type="text/template">a.delete.mapping-delete.js-syncconfig-delete
+div.row-fluid
+  div.span1
+    if isActive
+      span.enabled.js-is-active(title="Click to disable this mapping")
+    else
+      span.disabled.js-is-active(title="Click to enable this mapping")
+  div.span5
+    label Input bugzilla link
+    div.js-queryurl-wrapper(title="Click to Eidt Query URL")
+      span.glyphicon.glyphicon-link
+      p= queryUrl
+  div.span5
+    label Put bugs in List
+    div.js-listname-wrapper(title="Click to Change List")
+      span.glyphicon.glyphicon-list-alt
+      p= listName
+  div.mapping-loading.js-sync-status
+    div.process-loading
+      div.loader
+        div.top
+          div.bar
+          div.bar
+          div.bar
+          div.bar
+          div.bar
+        div.bottom
+          div.bar
+          div.bar
+          div.bar
+          div.bar
+          div.bar
+  div.span1
+    if isBoardMember && isActive
+      button.btn.btn-primary.js-mapping-sync Sync</script><script id="template-syncconfig-item-edit-view" type="text/template">div.span1
+div.span6
+  label Input bugzilla link
+  input(value=queryUrl).js-query-url
+  div.js-alert.alert.hide  Loading...
+div.span5
+  label Put bugs in List
+  a.js-specify-list New List
+  select.js-list-name
+    each list, i in lists
+      if list.id === listId._id
+        option(value=list.id, selected="selected")= list.name
+      else
+        option(value=list.id)= list.name
+  input(placeholder="Input New List Name").hide.js-list-name
+div.mapping-submit
+  button.btn.btn-primary.js-syncconfig-save Save
+  button.btn.js-syncconfig-cancel Cancel</script><script id="template-syncconfig-item-input-view" type="text/template">div.row-fluid
+  div.span1
+  div.span6
+    label Input bugzilla link
+    input(placeholder="Input a Bugzilla link").js-query-url
+    div.js-alert.alert.hide  Loading...
+  div.span5
+    label Put bugs in List
+    a.js-specify-list New List
+    select.js-list-name
+      option(value="") ----
+      each list, i in lists
+        option(value=list.id)= list.name
+    input(placeholder="Input New List Name").hide.js-list-name
+  div.mapping-submit
+    button.btn.btn-primary.js-syncconfig-add Save
+    button.btn.js-syncconfig-cancel Cancel</script><script id="template-notification-menu-view" type="text/template">a(class="dropdown-toggle js-dropdown-toggle",data-toggle="dropdown") Notification
+a(class="reminder") 1
+ul(class="dropdown-menu dropdown-notification")
+  li.all-read
+    a.js-all-read Mark All as Read
+  ul.dropdown-notification-content.js-dropdown-content
+  li.show-more
+    a.js-show-more Show More</script><script id="template-notification-item-view" type="text/template">span(href="javascript: void(0)") !{message} [#{created}]</script><script id="template-comment-item-view" type="text/template">dt
+ span.speanker= authorId.username
+dd
+ span.speaker-detail!= content
+ div.comment-option
+   div.item-time= "Creation: " + cantas.utils.formatDate(createdOn)
+   if typeof updatedOn !== 'undefined'
+     div.item-time= " Last Modified: " + cantas.utils.formatDate(updatedOn)
+   if authorId._id === cantas.utils.getCurrentUser().id
+     a.edit-comment.js-edit-comment(data-cid= _id) Edit</script><script id="template-comment-item-edit-view" type="text/template">textarea.js-comment-input
+button.btn.btn-primary.js-save-comment Save
+button.btn.js-cancel-comment Cancel</script><script id="template-move-list" type="text/template">div.modal-backdrop.fade.in
+ div#movement.modal.fade.in
+   div.modal-header
+     button.close(data-dismiss="modal") ×
+     h3= data.title
+   div.modal-body
+     div.choose-position
+       ul
+         li 
+           h4 Choose Board
+         li
+           input(class="js-move-search", type="text", placeholder="Search")
+         li
+           ul.js-move-items
+       ul.hide
+         li
+           h4 Choose List
+         li
+           input(class="js-move-search",type="text", placeholder="Search")
+         li
+           ul.js-move-items
+       ul.hide
+         li 
+           h4 Set Position
+         li.specific
+           a.js-set-position(data-position="top") Top
+           a.js-set-position(data-position="middle") Middle
+           a.js-set-position(data-position="bottom") Bottom
+         li
+           ul.js-move-position
+   footer.modal-footer
+     button.js-move.btn.btn-primary Move
+     button.btn(data-dismiss="modal") Cancel</script><script id="template-move-list-item" type="text/template">a(data-itemid= data._id, data-label= data.title)= data.title
+span ›</script><script id="template-comment-view" type="text/template">h4 Comment
+ a.new-item(href="http://daringfireball.net/projects/markdown/syntax") Markdown Syntax
+textarea.js-add-comment-input(placeholder="Add comment")
+div.js-comment-controls.hide.comment-button
+ button.btn.btn-primary.js-save-comment Save
+ button.btn.js-cancel-comment Cancel
+div.comment-list</script><script id="template-comment-item-view" type="text/template">dt
+ span.speanker= authorId.username
+dd
+ span.speaker-detail!= content
+ div.comment-option
+   div.item-time= "Creation: " + cantas.utils.formatDate(createdOn)
+   if typeof updatedOn !== 'undefined'
+     div.item-time= " Last Modified: " + cantas.utils.formatDate(updatedOn)
+   if authorId._id === cantas.utils.getCurrentUser().id
+     a.edit-comment.js-edit-comment(data-cid= _id) Edit</script><script id="template-comment-item-edit-view" type="text/template">textarea.js-comment-input
+button.btn.btn-primary.js-save-comment Save
+button.btn.js-cancel-comment Cancel</script><script id="template-admin-config-view" type="text/template">div.modal-config.fade.in
+ div.modal.fade.in
+   div.modal-header
+     button.close.btn(data-dismiss="modal") ×
+     h3 Permission Control
+   div.modal-body
+     article.admin-config
+       section.row-fluid
+         dl.span6.js-vote
+         dl.span6.js-comment
+   footer.modal-footer
+     button.btn(data-dismiss="modal") Close</script><script id="template-vote-config-view" type="text/template">dt
+ h3 Vote
+dd
+ if voteStatus == 'opened'
+   a.checked.js-open-vote.all
+     span
+     span
+     span Public for Every User
+ else
+   a.js-open-vote.all
+     span
+     span
+     span Public for Every User
+ if voteStatus == 'enabled'
+   a.checked.js-enable-vote.part
+     span
+     span
+     span Public for Board Member
+ else
+   a.js-enable-vote.part
+     span
+     span
+     span Public for Board Member
+ if voteStatus == 'disabled'
+   a.checked.js-disable-vote.none
+     span
+     span
+     span Disable
+ else
+   a.js-disable-vote.none
+     span
+     span
+     span Disable
+dd</script><script id="template-comment-config-view" type="text/template">dt
+ h3 Comment
+dd
+ if commentStatus == 'opened'
+   a.checked.js-open-comment.all
+     span
+     span
+     span Public for Every User
+ else
+   a.js-open-comment.all
+     span
+     span
+     span Public for Every User
+ if commentStatus == 'enabled'
+   a.checked.js-enable-comment.part
+     span
+     span
+     span Public for Board Member
+ else
+   a.js-enable-comment.part
+     span
+     span
+     span Public for Board Member
+ if commentStatus == 'disabled'
+   a.checked.js-disable-comment.none
+     span
+     span
+     span Disable
+ else
+   a.js-disable-comment.none
+     span
+     span
+     span Disable
+dd</script><script id="template-card-filter-panel-view" type="text/template">h3.panel-title Filter Cards
+form(class='filter-form js-filter-form')
+  div(class='panel-group')
+    h5(class='panel-group-title') Filter By Keyword
+    input(type='text', placeholder='Enter keyword...', class='js-cardfilter-keyword', name='keyword', value=keyword)
+  div(class='panel-group')
+    h5(class='panel-group-title') Show Cards
+    label(class='checkbox')
+      input(type='checkbox', class='js-cardfilter-created', name='created', checked=(created ? 'checked' : undefined))
+      | Created By Me
+    label(class='checkbox')
+      input(type='checkbox', class='js-cardfilter-subscribed', name='subscribed', checked=(subscribed ? 'checked' : undefined))
+      | Subscribed Cards
+    label(class='checkbox')
+      input(type='checkbox', class='js-cardfilter-assigned', name='assigned', checked=(assigned ? 'checked' : undefined))
+      | Assigned to me
+  div(class='panel-group')
+    h5(class='panel-group-title') Due Date
+    label(class='radio')
+      input(type='radio', class='js-cardfilter-dueDate', name='dueDate', value='day', checked=(dueDate=='day' ? 'checked' : undefined))
+      | Within the next day
+    label(class='radio')
+      input(type='radio', class='js-cardfilter-dueDate', name='dueDate', value='week', checked=(dueDate=='week' ? 'checked' : undefined))
+      | Within the next week
+    label(class='radio')
+      input(type='radio', class='js-cardfilter-dueDate', name='dueDate', value='month', checked=(dueDate=='month' ? 'checked' : undefined))
+      | Within the next month
+    label(class='radio')
+      input(type='radio', class='js-cardfilter-dueDate', name='dueDate', value='any', checked=(dueDate=='any' ? 'checked' : undefined))
+      | Anytime
+  div(class='panel-group')
+    h5(class='panel-group-title') Hidden Cards
+    label(class='checkbox')
+      input(type='checkbox', class='js-cardfilter-archived', name='archived', checked=(archived ? 'checked' : undefined))
+      | Show archived cards
+  div(class='form-footer')
+    input(type='submit', class='btn btn-warning', value='Filter Cards')
+    
+    </script><script id="template-card-filter-panel-link-view" type="text/template">li(data-panel=panel)
+  a(title='Filter Cards')
+    i(class='icon icon-filter')
+    span(class='badge badge-important')= total
+    
+    </script><script id="template-card-sort-panel-view" type="text/template">h3.panel-title Sort Cards
+form(class='sort-form js-sort-form')
+  div(class='panel-group')
+    h5(class='panel-group-title') Sort Cards By
+    label(class='radio')
+      input(type='radio', class='js-cardsort-field', name='sort-field', value='created', checked=(field=='created' ? 'checked' : undefined))
+      | Date Created
+    label(class='radio')
+      input(type='radio', class='js-cardsort-field', name='sort-field', value='board', checked=(field=='board' ? 'checked' : undefined))
+      | Board
+    label(class='radio')
+      input(type='radio', class='js-cardsort-field', name='sort-field', value='due', checked=(field=='due' ? 'checked' : undefined))
+      | Due Date
+  div(class='panel-group')
+    h5(class='panel-group-title') Order
+    label(class='radio')
+      input(type='radio', class='js-cardsort-order', name='sort-order', value='ASC', checked=(order=='ASC' ? 'checked' : undefined))
+      | Ascending
+    label(class='radio')
+      input(type='radio', class='js-cardsort-order', name='sort-order', value='DESC', checked=(order=='DESC' ? 'checked' : undefined))
+      | Descending
+  div(class='form-footer')
+    input(type='submit', class='btn btn-warning', value='Sort Cards')
+    
+    </script><script id="template-card-sort-panel-link-view" type="text/template">li(data-panel=panel)
+  a(title='Sort Cards')
+    i(class='icon icon-sort')</script> """ %}

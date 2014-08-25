@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cantas</title>
+    <meta property="qc:admins" content="73142662064136301625146375747716" />
+    <meta content="width=device-width, minimum-scale=1.0, maximum-scale=1.0" name="viewport">
+    <link href="/images/favicon.ico" type="image/x-icon" rel="shortcut icon">
+    <link rel="stylesheet" href="/stylesheets/eso-theme.css">
+    <link rel="stylesheet" href="/stylesheets/fonts/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/stylesheets/jquery-fileupload-ui.css">
+    <link rel="stylesheet" href="/stylesheets/project.min.css">
+    <!--<link rel="stylesheet" href="/stylesheets/project.css">-->
+    <!--<link rel="stylesheet" href="/stylesheets/style.css">-->
+    <!--<link rel="stylesheet" href="/stylesheets/custom.css">-->
+    <link rel="stylesheet" href="/stylesheets/extra.css">
+</head>
+<body>
+<div id="wrapper">{% block header %}
+    <header id="eso-topbar" class="clearfix"><a onclick="cantas.navigateTo('')" title="go back home" class="logo"></a>
+        <a target="_blank" href="" class="eso-logo" title="send email">Developed by CDKR</a>
+        <ul class="quick-menu unstyled clearfix">
+            <li class="dropdown header-user"><a data-toggle="dropdown" class="dropdown-toggle">{{user.username}}</a>
+                <ul class="dropdown-menu dropdown-board">
+                    <li><a href="/account">Settings</a>
+                    </li>
+                    <li><a href="/logout">Log Out</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="dropdown header-user"><a data-toggle="dropdown" class="dropdown-toggle">Board</a>
+                <ul class="dropdown-menu dropdown-board">
+                    <li><a onclick="cantas.navigateTo('boards/new')">New</a>
+                    </li>
+                    <li><a onclick="cantas.navigateTo('boards/public')">Public Boards</a>
+                    </li>
+                    <li><a onclick="cantas.navigateTo('boards/mine')">My Boards</a>
+                    </li>
+                    <li><a onclick="cantas.navigateTo('boards/closed')">Closed Boards</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="dropdown header-user js-notification-menu"></li>
+            <li class="dropdown header-user"><a onclick="cantas.navigateTo('help')" class="dropdown-toggle">Help</a>
+            </li>
+        </ul>
+        <form role="form" class="js-search-form">
+            <input type="text" name="query" placeholder="search" class="quick-search">
+        </form>
+    </header>
+    {% end %}
+    <div class="quick-search-content"></div>
+    {% block content %}{% end %}
+
+    {% block footer %}
+    <footer class="footer">
+        <div class="hss-logo"></div>
+        <div class="copyright">
+            <p>Version 0.1 &nbsp;<a href="" target="_blank">View On Github</a></p>
+
+            <p>INTERNAL USE ONLY</p>
+
+            <p>Copyright &copy; 2014 Red Hat, Inc. All rights reserved.</p>
+        </div>
+    </footer>
+    {% end %}
+
+</div>
+<script type="text/javascript" src="/javascripts/socket.io.js"></script>
+<script type="text/javascript" src="/javascripts/vendor/jade.js"></script>
+<script type="text/javascript" src="/javascripts/vendor.min.js"></script>
+<!--<script type="text/javascript" src="/javascripts/vendor/jquery-2.0.0.min.js"></script>-->
+<!--<script type="text/javascript" src="/javascripts/vendor/jquery.slug.js"></script>-->
+<!--<script type="text/javascript" src="/javascripts/vendor/async.js"></script>-->
+<!--<script type="text/javascript" src="/javascripts/vendor/markdown.js"></script>-->
+<!--<script type="text/javascript" src="/javascripts/vendor/jquery-ui.js"></script>-->
+<!--<script type="text/javascript" src="/javascripts/vendor/underscore.js"></script>-->
+<!--<script type="text/javascript" src="/javascripts/vendor/backbone.js"></script>-->
+<!--<script type="text/javascript" src="/javascripts/vendor/backbone.iobind.js"></script>-->
+<!--<script type="text/javascript" src="/javascripts/vendor/backbone.iosync.js"></script>-->
+<!--<script type="text/javascript" src="/javascripts/vendor/moment.js"></script>-->
+<!--<script type="text/javascript" src="/javascripts/vendor/bootstrap.min.js"></script>-->
+<!--<script type="text/javascript" src="/javascripts/vendor/modernizr.custom.79639.js"></script>-->
+<!--<script type="text/javascript" src="/javascripts/vendor/jquery.ba-cond.js"></script>-->
+<!--<script type="text/javascript" src="/javascripts/vendor/jquery.slitslider.js"></script>-->
+<!--<script type="text/javascript" src="/javascripts/vendor/load-image.min.js"></script>-->
+<!--<script type="text/javascript" src="/javascripts/vendor/jquery.iframe-transport.js"></script>-->
+<!--<script type="text/javascript" src="/javascripts/vendor/jquery.fileupload.js"></script>-->
+<!--<script type="text/javascript" src="/javascripts/vendor/jquery.fileupload-process.js"></script>-->
+<!--<script type="text/javascript" src="/javascripts/vendor/jquery.fileupload-image.js"></script>-->
+<!--<script type="text/javascript" src="/javascripts/vendor/jquery.fileupload-validate.js"></script>-->
+<!--<script type="text/javascript" src="/javascripts/vendor/jquery-ui-timepicker-addon.js"></script>-->
+
+{% block scripts %}{% end %}
+</body>
+</html>

@@ -1,0 +1,88 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="process-loading">
+    <div class="loader">
+        <div class="top">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+        <div class="bottom">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </div>
+</div>
+<div class="content clearfix"></div>
+<div id="card-detail" class="hide fade"></div>
+<div class="window-overlay modal hide fade"></div>
+<div class="config-window hide fade"></div>
+<div class="hide fade"></div>
+<div class="force-alert hide fade">
+    <div class="alert-content">
+        <p>This board is closed by board creator. Any further operation, please contact the creator.</p>
+        <a href="#" onclick="window.location.reload()">Reload page</a>
+    </div>
+</div>
+{% end %}
+{% block scripts %}
+<script type="text/javascript">
+    window.cantas = window.cantas || {};
+    cantas.user = {id: "{{user._id}}", username: "{{user.username}}"};
+    cantas.settings = {socketIO: {port: {{ 8000 if debug else 80 }} }}
+</script>
+
+{% include back_bone.html %}
+<script type="text/javascript" src="/javascripts/constants.js"></script>
+<script type="text/javascript" src="/javascripts/sortable.js"></script>
+<script type="text/javascript" src="/javascripts/utils/utils.js"></script>
+<script type="text/javascript" src="/javascripts/utils/safe_string.js"></script>
+<script type="text/javascript" src="/javascripts/application.js"></script>
+<script type="text/javascript" src="/javascripts/models/base.js"></script>
+<script type="text/javascript" src="/javascripts/views/base.js"></script>
+<script type="text/javascript" src="/javascripts/views/app.js"></script>
+<script type="text/javascript" src="/javascripts/views/search.js"></script>
+<script type="text/javascript" src="/javascripts/views/quickSearch.js"></script>
+<script type="text/javascript" src="/javascripts/models/activity.js"></script>
+<script type="text/javascript" src="/javascripts/views/activity.js"></script>
+<script type="text/javascript" src="/javascripts/models/notification.js"></script>
+<script type="text/javascript" src="/javascripts/views/notification.js"></script>
+<script type="text/javascript" src="/javascripts/models/boardMember.js"></script>
+<script type="text/javascript" src="/javascripts/views/boardMembers.js"></script>
+<script type="text/javascript" src="/javascripts/models/label.js"></script>
+<script type="text/javascript" src="/javascripts/models/board.js"></script>
+<script type="text/javascript" src="/javascripts/views/board.js"></script>
+<script type="text/javascript" src="/javascripts/models/syncConfig.js"></script>
+<script type="text/javascript" src="/javascripts/views/syncConfig.js"></script>
+<script type="text/javascript" src="/javascripts/models/list.js"></script>
+<script type="text/javascript" src="/javascripts/views/list.js"></script>
+<script type="text/javascript" src="/javascripts/models/checklist.js"></script>
+<script type="text/javascript" src="/javascripts/views/checklist.js"></script>
+<script type="text/javascript" src="/javascripts/models/card.js"></script>
+<script type="text/javascript" src="/javascripts/views/card.js"></script>
+<script type="text/javascript" src="/javascripts/models/comment.js"></script>
+<script type="text/javascript" src="/javascripts/views/comment.js"></script>
+<script type="text/javascript" src="/javascripts/models/attachment.js"></script>
+<script type="text/javascript" src="/javascripts/views/attachment.js"></script>
+<script type="text/javascript" src="/javascripts/models/vote.js"></script>
+<script type="text/javascript" src="/javascripts/views/boardlist.js"></script>
+<script type="text/javascript" src="/javascripts/views/cardList.js"></script>
+<script type="text/javascript" src="/javascripts/views/help.js"></script>
+<script type="text/javascript" src="/javascripts/views/accountSettings.js"></script>
+<script type="text/javascript" src="/javascripts/views/welcome.js"></script>
+<script type="text/javascript" src="/javascripts/views/dashboard.js"></script>
+<script type="text/javascript" src="/javascripts/views/dashboard-navigation.js"></script>
+<script type="text/javascript" src="/javascripts/views/confirmDialog.js"></script>
+<script type="text/javascript" src="/javascripts/models/visitor.js"></script>
+<script type="text/javascript" src="/javascripts/views/boardActiveUsers.js"></script>
+<script type="text/javascript" src="/javascripts/views/sidebar.js"></script>
+<script type="text/javascript" src="/javascripts/views/adminConfig.js"></script>
+<script type="text/javascript" src="/javascripts/router.js"></script>
+
+{% end %}
