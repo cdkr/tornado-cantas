@@ -25,8 +25,8 @@ settings = {
 
 try:
     from secret import secret_settings
-
-    secret_settings.update(secret_settings)
+    # put secret settings here(e.g. qq oauth client id and client secret)
+    settings.update(secret_settings)
 except ImportError:
     pass
 

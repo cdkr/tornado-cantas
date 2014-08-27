@@ -75,7 +75,7 @@ class QQOAuth2Mixin(OAuth2Mixin):
                 self._on_get_user_info, future, session, fields),
             access_token=session['access_token'],
             openid=session['openid'],
-            client_id=client_id,
+            oauth_consumer_key=client_id,
         )
 
     def _on_get_user_info(self, future, session, fields, user):
