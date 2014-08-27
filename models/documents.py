@@ -370,7 +370,7 @@ class User(MyDocument):
     username = StringField(required=True)
     fullname = StringField(default='')
     password = StringField(default='')
-    email = StringField(unique=True, default='')
+    email = StringField(default='')
     joined = AutonowDatetimeField()
     isFirstLogin = BooleanField(default=True)
     roles = ListField(ReferenceField('Role'))

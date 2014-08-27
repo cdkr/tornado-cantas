@@ -47,7 +47,6 @@ class BaseHandler(RequestHandler):
         if self.current_user:
             kwargs['user'] = self.current_user
         kwargs['debug'] = self.settings.get('debug', False)
-        print kwargs['debug']
         super(BaseHandler, self).render(*args, **kwargs)
 
     def json(self, data):
