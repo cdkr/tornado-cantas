@@ -13,6 +13,9 @@ This cantas is a Python implemention using [tornado](https://github.com/tornadow
 
 And I believe this is a great open source project for learning tornado, mongodb and websocket.
 
+###Screenshot
+
+  ![project screenshot](./static/images/cantas-help-list.gif)
 
 ### Demo
 
