@@ -76,6 +76,7 @@ class AwesomerQuerySet(QuerySet):
 
 
 class MyDocument(Document):
+    """ Abstruct document class """
     meta = {
         'allow_inheritance': True,
         'abstract': True,

@@ -14,6 +14,27 @@ except ImportError:
 
 
 class QQOAuth2Mixin(OAuth2Mixin):
+    """Handles the login for the QQ user, returning a user object.
+
+        Example usage::
+
+        class QQLoginHandler(tornado.web.RequestHandler,
+                             QQOAuth2Mixin):
+
+            @gen.coroutine
+            def get(self):
+                redirect_uri = <YOUR_REDIRCT_URI>
+                if self.get_argument('code', None):
+                    qq_user = yield self.get_authenticated_user(
+                        redirect_uri=redirect_uri,
+                        client_id=self.settings['qq_oauth']['key'],
+                        client_secret=self.settings['qq_oauth']['secret'],
+                        code=self.get_argument('code'))
+                else:
+                    yield self.authorize_redirect(
+                        client_id=self.settings['qq_oauth']['key'],
+                        redirect_uri=redirect_uri)
+    """
     _OAUTH_ACCESS_TOKEN_URL = 'https://graph.qq.com/oauth2.0/token?'
     _OAUTH_AUTHORIZE_URL = 'https://graph.qq.com/oauth2.0/authorize?'
 
@@ -30,7 +51,7 @@ class QQOAuth2Mixin(OAuth2Mixin):
             'extra_params': {'grant_type': grant_type}
         }
 
-        fields = ('nickname', 'figureurl')
+        fields = {'nickname', 'figureurl'}
 
         if extra_fields:
             fields.update(extra_fields)

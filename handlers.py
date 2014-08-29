@@ -21,6 +21,7 @@ __all__ = (
 
 
 class BaseHandler(RequestHandler):
+    """ Abstruct RequestHandler for all others """
     def get_current_user(self):
         user_id = self.get_cookie("oid")
         try:
@@ -54,8 +55,8 @@ class BaseHandler(RequestHandler):
         self.finish(json.dumps(data, cls=ComplexEncoder))
 
 
-class QQLoginHandler(BaseHandler,
-                     QQOAuth2Mixin):
+class QQLoginHandler(BaseHandler, QQOAuth2Mixin):
+    """ QQ Oauth2 login handler """
     @gen.coroutine
     def get(self):
         redirect_uri = 'http://cantas.chifruit.com/auth/qq'
@@ -111,18 +112,21 @@ class LoginHandler(BaseHandler):
 
 
 class LogoutHandler(BaseHandler):
+    """ logout handler """
     def get(self, *args, **kwargs):
         self.clear_all_cookies()
         self.redirect('/')
 
 
 class MainHandler(BaseHandler):
+    """ index page handler """
     @authenticated
     def get(self, *args, **kwargs):
         self.render('application.html')
 
 
 class BoardsHandler(BaseHandler):
+    """ base handler for those return a list of boards """
     @authenticated
     def get(self, *args, **kwargs):
         self.json(self.get_boards().values())
@@ -141,23 +145,27 @@ class MyBoardsHandler(BoardsHandler):
 
 
 class PublicBoardsHandler(BoardsHandler):
+    """ get all public boards """
     def get_boards(self):
         return Board.objects(isClosed=False,
                              isPublic=True).order_by('updated')
 
 
 class ClosedBoardsHandler(BoardsHandler):
+    """ get my closed boards """
     def get_boards(self):
         return Board.objects(creatorId=self.user.id,
                              isClosed=True).order_by('updated')
 
 
 class InvitedBoardsHandler(BoardsHandler):
+    """ get boards inviting me """
     def get_boards(self):
         return BoardMemberRelation.get_invited_boards_by_member(self.user.id)
 
 
 class NewBoardHandler(BaseHandler):
+    """ new board handler """
     @authenticated
     def get(self, *args, **kwargs):
         user = self.user
@@ -180,6 +188,7 @@ class NewBoardHandler(BaseHandler):
 
 
 class MyCardsHandler(BaseHandler):
+    """ get all my cards """
     @authenticated
     def get(self, *args, **kwargs):
         cards = Card.objects(isArchived=False, creatorId=self.user.id).values()
@@ -190,18 +199,21 @@ class MyCardsHandler(BaseHandler):
 
 
 class ArchivedCardsHandler(BaseHandler):
+    """ get archived cards of given board """
     @authenticated
     def get(self, board_id, *args, **kwargs):
         self.json(Card.objects(isArchived=True, boardId=board_id).values())
 
 
 class ArchivedListsHandler(BaseHandler):
+    """ get archived lists of given board """
     @authenticated
     def get(self, board_id, *args, **kwargs):
         self.json(List.objects(isArchived=True, boardId=board_id).values())
 
 
 class OrderCardHandler(BaseHandler):
+    """ get unarchived cards of given board  """
     @authenticated
     def get(self, list_id, *args, **kwargs):
         self.json(Card.objects(listId=list_id, isArchived=False).values())
